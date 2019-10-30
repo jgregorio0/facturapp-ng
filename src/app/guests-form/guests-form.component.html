@@ -1,0 +1,32 @@
+<p-accordion>
+    <p-accordionTab header="Añadir inquilino" [selected]="false">
+        <form (ngSubmit)="onSubmit()" #guestForm="ngForm">
+            <div class="ui-g ui-fluid">
+                <div class="ui-g-12 ui-md-4">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+                        <input class="fullwidth" type="text" [(ngModel)]="guest.name" placeholder="Nombre" name="name">
+                    </div>
+                </div>
+
+                <div class="ui-g-6 ui-md-4">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><i class="pi pi-sign-in"
+                                style="line-height: 1.25;"></i></span>
+                        <p-calendar [(ngModel)]="guest.from" [locale]="es" dateFormat="yy-mm-dd" name="from">
+                        </p-calendar>
+                    </div>
+                </div>
+
+                <div class="ui-g-6 ui-md-4">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><i class="pi pi-sign-out"
+                                style="line-height: 1.25;"></i></span>
+                        <p-calendar class="right" [(ngModel)]="guest.to" [locale]="es" dateFormat="yy-mm-dd" name="to"></p-calendar>
+                    </div>
+                </div>
+                <p-button label="Guardar"></p-button>
+            </div>
+        </form>
+    </p-accordionTab>
+</p-accordion>
